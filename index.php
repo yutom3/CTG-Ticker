@@ -34,7 +34,7 @@
 
     function loadfile(){
         <?php
-         $local_file_open = file_get_contents("./data.txt");
+         $local_file_open = file_get_contents("./Resources/TXT/Ticker_Database.txt");
          $local_file = explode("*", $local_file_open);
          ?>
          infile = <?php echo json_encode($local_file) ?>;
@@ -100,5 +100,28 @@
 
     </div>
     </div>
+        <div id="CTG_Ticker">
+        </div>
+        <form action="CTG_Database.php" method="post">
+            Now: 
+            <input type="text" name="game1">
+            <br>
+            Next: 
+            <input type="text" name="game2">
+            <br>
+            After: 
+            <input type="text" name="game3">
+            <br>
+            <input type="submit" value="Update">
+        </form>
+    <script>
+        $(document).ready(function(){
+            loadTicker();
+        });
+        function loadTicker(){
+            $("#CTG_Ticker").load("/Resources/PHP/CTG_Ticker.php");
+            setTimeout(loadTicker, 100);
+        }
+    </script>
 
 </body>

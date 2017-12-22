@@ -53,7 +53,7 @@ function nextItem() { // Selects current item to display
   }
   if (scheduleCur < scheduleMax) { // Will not increment until all announcements were displayed
     ++scheduleCur;
-  } else if ((announcementsCur > announcementsMax) && (done != 1)) { // Detects when all items have been displayed
+  } else if ((announcementsCur-1 > announcementsMax) && (done != 1)) { // Detects when all items have been displayed
     clearInterval(myInterval); // Stops previous instance
     loadTicker(); // Refresh data
     scheduleCur = 1;

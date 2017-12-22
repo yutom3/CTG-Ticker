@@ -1,127 +1,95 @@
 <head>
-    <style>
-        #marqueeborder {
-        color: #ffffff;
-        background-color: #000000;
-        font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
-        position:relative;
-        height:40px;
-        overflow:hidden;
-        font-size: 1.5em;
-        }
-        
-        #marqueecontent {
-        position:absolute;
-        left:0px;
-        line-height:40px;
-        white-space:nowrap;
-        }
-    </style>
+  <title>
+    CTG Ticker
+  </title>
+  <link href = "Resources/Images/CTG Logo.png" rel="icon" type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <style>
+  #marqueeBorder {
+    color: #ffffff;
+    background-color: #000000;
+    font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+    position:relative;
+    height:40px;
+    overflow:hidden;
+    font-size: 1.5em;
+  }
+
+  #marqueeContent {
+    position:absolute;
+    left:0px;
+    line-height:40px;
+    white-space:nowrap;
+  }
+  .form {
+    left: 40px;
+    position: absolute;
+  }
+  </style>
+  <script type="text/javascript"> // Prevent the page from refreshing when submitting a HTML form
+      $(document).ready( function () {
+          $('form').submit( function () {
+              var formdata = $(this).serialize();
+              $.ajax({
+                  type: "POST",
+                  url: "Resources/PHP/CTG_Database.php",
+                  data: formdata
+              });
+              return false;
+          });
+      });
+  </script>
 </head>
 <body>
-    <script type="text/javascript">
 
-    // Set init vars
-    var holdmax=100;
-    var holdcur=0;
-    var interval = 20;
-	var scrollspeed=2;
-	var pxptick=scrollspeed;
-    var infile = [];
-    var infilecur = 0;
-    var infilemax = 0;
-    var done = 0;
+  <!-- Ticker Overlay -->
+  <div id="CTG_Ticker">
+  </div>
 
-    function loadfile(){
-        <?php
-         $local_file_open = file_get_contents("./Resources/TXT/Ticker_Database.txt");
-         $local_file = explode("*", $local_file_open);
-         ?>
-         infile = <?php echo json_encode($local_file) ?>;
-         infilecur = 0;
-         infilemax = infile.length;
-    }
-    function getnextitem(){
-        if ((infilecur >= infilemax) && (done != 1)) {
-            location = location;
-            done = 1;
-            return;
-        }
-        if (done == 1)
-        {
-            return;
-        }
-        marqueediv=document.getElementById("marqueecontent");
-        //marqueediv.innerHTML = ""+infile[infilecur][0]+" <img src=\""+infile[infilecur][1]+"\" style='height:30px; vertical-align: middle;' />  "+infile[infilecur][2];
-        marqueediv.innerHTML = ""+infile[infilecur];
-        marqueediv.style.left="24px";
-        marqueediv.style.top=parseInt(document.getElementById("marqueeborder").offsetHeight*1)+"px";
-        holdcur = 0;
-        ++infilecur;
-    }
-
-	function startmarquee(){
-        loadfile();
-        getnextitem();
-        // Make a shortcut referencing our div with the content we want to scroll
-        marqueediv=document.getElementById("marqueecontent");
-		// Get the total width of our available scroll area
-		marqueewidth=document.getElementById("marqueeborder").offsetWidth;
-        marqueeheight = document.getElementById("marqueeborder").offsetHeight;
-		// Get the width of the content we want to scroll
-		contentwidth=marqueediv.offsetWidth;
-        contentheight=marqueediv.offsetHeight;
-		// Start the ticker at 50 milliseconds per tick, adjust this to suit your preferences
-		// Be warned, setting this lower has heavy impact on client-side CPU usage. Be gentle.
-		setInterval("scrollmarquee()",interval);
-	}
-
-
-	function scrollmarquee(){
-		// Check position of the div, then shift it left by the set amount of pixels.
-        if ((parseInt(marqueediv.style.top) > 0) && (holdcur == 0)) {
-            marqueediv.style.top=parseInt(marqueediv.style.top)-pxptick/2+"px";
-        }
-        else if (holdcur < holdmax)
-            holdcur += 1;
-        else if ((parseInt(marqueediv.style.top)>parseInt(contentheight*-1)))
-            marqueediv.style.top=parseInt(marqueediv.style.top)-pxptick/2+"px";
-        else {
-            getnextitem();
-        }
-	}
-	window.onload=startmarquee;
-    </script>
-    
-    <div id="marqueeborder">
-    <div id="marqueecontent">
-    
-
-
+  <!-- HTML Forms -->
+  <div class="form">
+    <!-- Update Schedule -->
+    <div class="schedule">
+      <h3>Schedule</h3>
+      <form action="Resources/PHP/CTG_Database.php" method="post">
+        Now:<br>
+        <input type="text" name="game1">
+        <br>
+        Next:<br>
+        <input type="text" name="game2">
+        <br>
+        After:<br>
+        <input type="text" name="game3">
+        <br>
+        <input type="submit" value="Update Schedule">
+      </form>
     </div>
-    </div>
-        <div id="CTG_Ticker">
-        </div>
-        <form action="CTG_Database.php" method="post">
-            Now: 
-            <input type="text" name="game1">
-            <br>
-            Next: 
-            <input type="text" name="game2">
-            <br>
-            After: 
-            <input type="text" name="game3">
-            <br>
-            <input type="submit" value="Update">
-        </form>
-    <script>
-        $(document).ready(function(){
-            loadTicker();
-        });
-        function loadTicker(){
-            $("#CTG_Ticker").load("/Resources/PHP/CTG_Ticker.php");
-            setTimeout(loadTicker, 100);
-        }
-    </script>
 
+    <!-- Update Announcements -->
+    <div class="announcements">
+      <h3>Announcements (optional)</h3>
+      <form action="Resources/PHP/CTG_Database.php" method="post">
+        Announcement 1:<br>
+        <input type="text" name="announcement1">
+        <br>
+        Announcement 2:<br>
+        <input type="text" name="announcement2">
+        <br>
+        Announcement 3:<br>
+        <input type="text" name="announcement3">
+        <br>
+        <input type="submit" value="Update Announcements">
+      </form>
+    </div>
+  </div>
+  <script> // Start ticker upon page load
+      $(document).ready(function(){
+          loadTicker();
+      });
+      function loadTicker(){
+          $("#CTG_Ticker").load("Resources/PHP/CTG_Ticker.php");
+      }
+  </script>
 </body>

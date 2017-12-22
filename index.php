@@ -10,9 +10,11 @@
   #marqueeBorder {
     color: #ffffff;
     background-color: #000000;
+    background-image: url("Resources/Images/Ticker.png");
+    background-size: 100% 100%;
     font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
     position:relative;
-    height:40px;
+    height: 137px;
     overflow:hidden;
     font-size: 1.5em;
   }
@@ -48,6 +50,8 @@
   <div id="CTG_Ticker">
   </div>
 
+  <br>
+
   <!-- HTML Forms -->
   <div class="form">
     <!-- Update Schedule -->
@@ -55,40 +59,42 @@
       <h3>Schedule</h3>
       <form action="Resources/PHP/CTG_Database.php" method="post">
         Now:<br>
-        <input type="text" name="game1">
+        <input type="text" name="game1" size="80em">
         <br>
         Next:<br>
-        <input type="text" name="game2">
+        <input type="text" name="game2" size="80em">
         <br>
         After:<br>
-        <input type="text" name="game3">
-        <br>
+        <input type="text" name="game3" size="80em">
+        <br><br>
         <input type="submit" value="Update Schedule">
       </form>
     </div>
+
+    <br>
 
     <!-- Update Announcements -->
     <div class="announcements">
       <h3>Announcements (optional)</h3>
       <form action="Resources/PHP/CTG_Database.php" method="post">
         Announcement 1:<br>
-        <input type="text" name="announcement1">
+        <input type="text" name="announcement1" size="107">
         <br>
         Announcement 2:<br>
-        <input type="text" name="announcement2">
+        <input type="text" name="announcement2" size="107">
         <br>
         Announcement 3:<br>
-        <input type="text" name="announcement3">
-        <br>
+        <input type="text" name="announcement3" size="107">
+        <br><br>
         <input type="submit" value="Update Announcements">
       </form>
     </div>
   </div>
   <script> // Start ticker upon page load
-      $(document).ready(function(){
+      $(document).ready(function() {
           loadTicker();
       });
-      function loadTicker(){
+      function loadTicker() {
           $("#CTG_Ticker").load("Resources/PHP/CTG_Ticker.php");
       }
   </script>

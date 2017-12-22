@@ -1,1 +1,1 @@
-<div class='row'><div class='col-sm-4 ticker_data' id='game1'>Game 1</div><div class='col-sm-4 ticker_data' id='game2'>Game 2</div><div class='col-sm-4 ticker_data' id='game3'>Game 3</div></div>
+<div class='row'><div class='col-sm-4 ticker_data' id='game1'>1</div><div class='col-sm-4 ticker_data' id='game2'>2</div><div class='col-sm-4 ticker_data' id='game3'></div></div>

@@ -10,10 +10,10 @@
     #marqueeBorder {
         color: #ffffff;
         background-color: none;
-        background-image: url("Resources/Images/Ticker.png");
-        background-size: contain;
-        background-repeat: repeat-x;
-        font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-image: url("Resources/Images/Ticker.png"),url("Resources/Images/TickerBlack.png");
+        background-size: contain, contain;
+        background-repeat: no-repeat, repeat-x;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
         position:relative;
         height: 50px;
         overflow:hidden;
@@ -33,22 +33,6 @@
   .form {
     left: 40px;
     position: absolute;
-  }
-  #game1 {
-    left: 0.5em;
-    background-image: url("Resources/Images/Ticker1.png");
-    background-repeat: no-repeat;
-    background-size: 4em 100%;
-  }
-  #game2 {
-    background-image: url("Resources/Images/Ticker2.png");
-    background-repeat: no-repeat;
-    background-size: 4em 100%;
-  }
-  #game3 {
-    background-image: url("Resources/Images/Ticker3.png");
-    background-repeat: no-repeat;
-    background-size: 4em 100%;
   }
   select {
     width: 7em;

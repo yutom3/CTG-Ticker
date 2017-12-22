@@ -7,17 +7,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
   <style>
-  #marqueeBorder {
-    color: #ffffff;
-    background-color: #000000;
-    background-image: url("Resources/Images/Ticker.png");
-    background-size: 100% 100%;
-    font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
-    position:relative;
-    height: 137px;
-    overflow:hidden;
-    font-size: 1.5em;
-  }
+    #marqueeBorder {
+        color: #ffffff;
+        background-color: #000000;
+        background-image: url("Resources/Images/Ticker.png"),url("Resources/Images/Ticker2.png");
+        background-size: contain,contain;
+        background-repeat: no-repeat, repeat-x;
+        font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+        position:relative;
+        height: 40px;
+        overflow:hidden;
+        font-size: 1.5em;
+    }
 
   #marqueeContent {
     position:absolute;

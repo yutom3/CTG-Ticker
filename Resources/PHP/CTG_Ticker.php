@@ -63,7 +63,7 @@ function nextItem() { // Selects current item to display
     return;
   }
 
-  marqueeDiv.style.left="24px";
+  marqueeDiv.style.left="0px";
   marqueeDiv.style.top=parseInt(document.getElementById("marqueeBorder").offsetHeight*1)+"px";
   holdCur = 0;
 }

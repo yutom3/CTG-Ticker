@@ -14,7 +14,7 @@
         background-size: contain, contain;
         background-repeat: no-repeat, repeat-x;
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-        position:relative;
+        position: relative;
         height: 50px;
         overflow:hidden;
         font-size: 2em;

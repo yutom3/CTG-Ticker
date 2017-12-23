@@ -26,6 +26,8 @@ function loadFile() { // Read file
   schedule = <?php echo json_encode($local_file) ?>;
   scheduleCur = 1;
   scheduleMax = 3;
+  scheduleSubCur = 0;
+  scheduleSubMax = 1;
 
   <?php
     $local_file_open = file_get_contents("../TXT/Announcements.txt");
@@ -41,25 +43,35 @@ function nextItem() { // Selects current item to display
   marqueeDiv=document.getElementById("marqueeContent");
   switch (scheduleCur) {
     case 1: // Schedule
-      marqueeDiv.innerHTML = schedule;
+          marqueeDiv.innerHTML = schedule[scheduleSubCur];
       break;
     case 2: // Sponsors
-      marqueeDiv.innerHTML = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png' style='height:25px;vertical-align:center;'/>"
+          marqueeDiv.innerHTML = "<div class='row'><div class='tickerTitle' style='padding-left:1em'>Sponsors &nbsp</div><div class='tickerdata'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png' style='height:25px;vertical-align:center;'/></div></div>"
       break;
     case 3: // Announcements
       marqueeDiv.innerHTML = announcements[announcementsCur-1];
-      ++announcementsCur
+      break;
+    default: // Default action
+      marqueeDiv.innerHTML = "Thanks for watching Change Thru Games: Level 4!";
       break;
   }
-  if (scheduleCur < scheduleMax) { // Will not increment until all announcements were displayed
+    if (scheduleSubCur < scheduleSubMax) { //Is the schedule through?
+        ++scheduleSubCur;
+    }
+  else if (scheduleCur < scheduleMax) { // Will not increment until all announcements were displayed
     ++scheduleCur;
-  } else if ((announcementsCur-1 > announcementsMax) && (done != 1)) { // Detects when all items have been displayed
+  } else if (announcementsCur <= announcementsMax) {
+    ++announcementsCur;
+  } else if (done != 1) { // Detects when all items have been displayed
+    //done = 1;
     clearInterval(myInterval); // Stops previous instance
     loadTicker(); // Refresh data
     scheduleCur = 1;
     announcementsCur = 1;
+    scheduleSubCur = 0;
+    scheduleSubMax = 1;
   }
-  if (done == 1) {
+  else {
     return;
   }
 
@@ -104,3 +116,4 @@ startMarquee();
   <div id="marqueeContent">
   </div>
 </div>
+

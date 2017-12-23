@@ -17,18 +17,21 @@
         position: relative;
         height: 50px;
         overflow:hidden;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
   #marqueeContent {
     position: absolute;
-    left: 0px;
+    left: 12px !important;
     line-height: 55px;
     width: 100%;
     white-space:nowrap;
   }
   .tickerTitle, .tickerData {
-    display: inline;
+    display: inline-block;
+  }
+  .tickerData {
+    padding-left:1em !important;
   }
   .form {
     left: 40px;

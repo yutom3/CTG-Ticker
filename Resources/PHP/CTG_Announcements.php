@@ -1,5 +1,5 @@
 <?php
-	// Update Anouncements.txt
+	// Update Announcements.txt
 	$divHTML = "<div class='tickerTitle'>Latest News </div><div class='tickerData'>";
 	if (!empty($_POST[announcement1])) {
 	$content = $divHTML.$_POST[announcement1]."</div>";

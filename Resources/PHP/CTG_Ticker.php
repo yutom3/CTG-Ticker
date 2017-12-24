@@ -1,11 +1,11 @@
 <script type="text/javascript">
 
 // Set initial vars
-var holdMax=100;
-var holdCur=0;
+var holdMax = 100;
+var holdCur = 0;
 var interval = 20;
-var scrollSpeed=2;
-var pxpTick=scrollSpeed;
+var scrollSpeed = 2;
+var pxpTick = scrollSpeed;
 
 var schedule = "";
 var scheduleCur = 0;
@@ -36,7 +36,6 @@ function loadFile() { // Read file
   announcements = <?php echo json_encode($local_file) ?>;
   announcementsCur = 1;
   announcementsMax = announcements.length;
-
 }
 
 function nextItem() { // Selects current item to display
@@ -74,8 +73,8 @@ function nextItem() { // Selects current item to display
     return;
   }
 
-  marqueeDiv.style.left="0px";
-  marqueeDiv.style.top=parseInt(document.getElementById("marqueeBorder").offsetHeight*1)+"px";
+  marqueeDiv.style.left = "0px";
+  marqueeDiv.style.top = parseInt(document.getElementById("marqueeBorder").offsetHeight*1)+"px";
   holdCur = 0;
 }
 
@@ -83,9 +82,9 @@ function startMarquee() {
   loadFile();
   nextItem();
   // Make a shortcut referencing our div with the content we want to scroll
-  marqueeDiv=document.getElementById("marqueeContent");
+  marqueeDiv = document.getElementById("marqueeContent");
   // Get the total width of our available scroll area
-  marqueeWidth=document.getElementById("marqueeBorder").offsetWidth;
+  marqueeWidth = document.getElementById("marqueeBorder").offsetWidth;
   marqueeHeight = document.getElementById("marqueeBorder").offsetHeight;
   // Get the width of the content we want to scroll
   contentWidth=marqueeDiv.offsetWidth;
@@ -107,6 +106,7 @@ function scrollMarquee() {
     nextItem();
   }
 }
+
 startMarquee();
 </script>
 

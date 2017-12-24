@@ -30,13 +30,13 @@
     display: inline-block;
   }
   .tickerData {
-    padding-left:1em !important;
+    padding-left: 1em !important;
   }
   .schedule, .announcements {
     margin: 40px;
   }
   select {
-    width: 7em;
+    width: 7.2em;
   }
   </style>
   <script type="text/javascript"> // Prevent the page from refreshing when submitting a HTML form
@@ -69,15 +69,14 @@
   </div>
 
   <div class="row">
-    <!-- HTML Forms -->
     <div class="form col-sm-6">
       <!-- Update Schedule -->
       <div class="schedule">
         <h3>Schedule</h3>
         <form class="scheduleForm" action="Resources/PHP/CTG_Schedule.php" method="post">
           Now: (No need to select time.)<br>
-          <select name="time1" size="1em" disabled=>
-            <option value="" disabled="disabled" selected>CURRENT</option>
+          <select name="time1" size="1em" disabled>
+            <option value="" disabled selected>CURRENT</option>
           </select>
           <input type="text" name="game1" size="80em">
           <br>
@@ -144,34 +143,46 @@
           <input type="submit" name="submitSchedule" value="Update Schedule">
         </form>
       </div>
+    </div>
+    <div class="form col-sm-6" id="CTG_CurrentSchedule">
+    </div>
+  </div>
 
-      <br>
-
+  <div class="row">
+    <div class="form col-sm-6">
       <!-- Update Announcements -->
       <div class="announcements">
         <h3>Announcements (optional)</h3>
         <form class="announcementsForm" action="Resources/PHP/CTG_Announcements.php" method="post">
           Announcement 1:<br>
-          <input type="text" name="announcement1" size="95">
+          <input type="text" name="announcement1" size="95em">
           <br>
           Announcement 2:<br>
-          <input type="text" name="announcement2" size="95">
+          <input type="text" name="announcement2" size="95em">
           <br>
           Announcement 3:<br>
-          <input type="text" name="announcement3" size="95">
+          <input type="text" name="announcement3" size="95em">
           <br>
           <input type="submit" name="submitAnnouncements" value="Update Announcements">
         </form>
       </div>
     </div>
+    <div class="form col-sm-6" id="CTG_CurrentAnnouncements">
+    </div>
+  </div>
 
 
   <script> // Start ticker upon page load
-      $(document).ready(function() {
-          loadTicker();
-      });
-      function loadTicker() {
-          $("#CTG_Ticker").load("Resources/PHP/CTG_Ticker.php");
-      }
+    $(document).ready(function() {
+      loadTicker();
+      setInterval(loadCurrent,100);
+    });
+    function loadTicker() {
+      $("#CTG_Ticker").load("Resources/PHP/CTG_Ticker.php");
+    }
+    function loadCurrent() {
+      $("#CTG_CurrentSchedule").load("Resources/PHP/CTG_CurrentSchedule.php");
+      $("#CTG_CurrentAnnouncements").load("Resources/PHP/CTG_CurrentAnnouncements.php");
+    }
   </script>
 </body>

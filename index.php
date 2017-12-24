@@ -140,7 +140,7 @@
           </select>
           <input type="text" name="game3" size="80em">
           <br>
-          <input type="submit" name="submitSchedule" value="Update Schedule">
+          <input type="submit" name="submitSchedule" value="Update Schedule" onclick="loadCurrentDelay()">
         </form>
       </div>
     </div>
@@ -163,7 +163,7 @@
           Announcement 3:<br>
           <input type="text" name="announcement3" size="95em">
           <br>
-          <input type="submit" name="submitAnnouncements" value="Update Announcements">
+          <input type="submit" name="submitAnnouncements" value="Update Announcements" onclick="loadCurrentDelay()">
         </form>
       </div>
     </div>
@@ -172,10 +172,11 @@
   </div>
 
 
-  <script> // Start ticker upon page load
+  <script type="text/javascript"> // Start ticker upon page load
+    var loadHelper;
     $(document).ready(function() {
       loadTicker();
-      setInterval(loadCurrent,100);
+      loadCurrentDelay();
     });
     function loadTicker() {
       $("#CTG_Ticker").load("Resources/PHP/CTG_Ticker.php");
@@ -184,5 +185,9 @@
       $("#CTG_CurrentSchedule").load("Resources/PHP/CTG_CurrentSchedule.php");
       $("#CTG_CurrentAnnouncements").load("Resources/PHP/CTG_CurrentAnnouncements.php");
     }
+    function loadCurrentDelay() {
+        loadHelper = setTimeout(loadCurrent,1000);
+    }
   </script>
 </body>
+

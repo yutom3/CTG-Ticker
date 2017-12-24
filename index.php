@@ -30,13 +30,14 @@
   }
   #marqueeContent {
     position: absolute;
-    left: 12px !important;
+    left: -12px !important;
     line-height: 55px;
     width: 100%;
     white-space:nowrap;
   }
   .tickerData {
     display: inline;
+    padding-left: 1em !important;
   }
   .tickerTitle {
     display:inline-block;

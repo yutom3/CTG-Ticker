@@ -7,18 +7,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
   <style>
-    #marqueeBorder {
-        color: #ffffff;
-        background-color: none;
-        background-image: url("Resources/Images/Ticker.png"), url("Resources/Images/TickerBlack.png");
-        background-size: contain, contain;
-        background-repeat: no-repeat, repeat-x;
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-        position: relative;
-        height: 50px;
-        overflow:hidden;
-        font-size: 1.5em;
-    }
+  #CTG_Ticker {
+    shape-outside: none;
+    clip-path: polygon(0px 0px, 123px 0px, 126px 7px, 100% 7px, 100% 50px, 0px 50px);
+  }
+  #marqueeBorder {
+      color: #ffffff;
+      background-color: none;
+      background-image: url("Resources/Images/Ticker.png"), url("Resources/Images/TickerBlack.png");
+      background-size: contain, contain;
+      background-repeat: no-repeat, repeat-x;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      position: relative;
+      height: 50px;
+      overflow:hidden;
+      font-size: 1.5em;
+  }
   #marqueeContent {
     position: absolute;
     left: 12px !important;
@@ -187,7 +191,7 @@
       $("#CTG_CurrentAnnouncements").load("Resources/PHP/CTG_CurrentAnnouncements.php");
     }
     function loadCurrentDelay() {
-        loadHelper = setTimeout(loadCurrent,1000);
+      loadHelper = setTimeout(loadCurrent,1000);
     }
   </script>
 </body>

@@ -7,6 +7,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
   <style>
+  @font-face {
+    font-family: TheLightFont;
+    src: url("./Resources/Fonts/TheLightFont.otf");
+  }
   #CTG_Ticker {
     shape-outside: none;
     clip-path: polygon(0px 0px, 123px 0px, 126px 7px, 100% 7px, 100% 50px, 0px 50px);
@@ -18,7 +22,7 @@
       background-image: url("Resources/Images/Ticker.png"), url("Resources/Images/TickerBlack.png");
       background-size: contain, contain;
       background-repeat: no-repeat, repeat-x;
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-family: TheLightFont, Arial, "Helvetica Neue", Helvetica, sans-serif;
       position: relative;
       height: 50px;
       overflow:hidden;

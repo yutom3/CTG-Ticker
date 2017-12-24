@@ -35,11 +35,13 @@
     width: 100%;
     white-space:nowrap;
   }
-  .tickerTitle, .tickerData {
-    display: inline-block;
-  }
   .tickerData {
-    padding-left: 1em !important;
+    display: inline;
+  }
+  .tickerTitle {
+    display:inline-block;
+    text-align: center;
+    width: 150px !important;
   }
   .schedule, .announcements {
     margin: 40px;
@@ -200,3 +202,4 @@
     }
   </script>
 </body>
+

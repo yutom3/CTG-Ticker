@@ -65,6 +65,7 @@
 <body>
 
   <!-- Ticker Overlay -->
+  <br>
   <div id="CTG_Ticker">
   </div>
 
@@ -190,4 +191,3 @@
     }
   </script>
 </body>
-

@@ -45,7 +45,7 @@ function nextItem() { // Selects current item to display
           marqueeDiv.innerHTML = schedule[scheduleSubCur];
       break;
     case 2: // Sponsors
-          marqueeDiv.innerHTML = "<div class='row'><div class='tickerTitle' style='padding-left:1em'>Sponsors &nbsp</div><div class='tickerdata'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png' style='height:25px;vertical-align:center;'/></div></div>"
+          marqueeDiv.innerHTML = "<div class='tickerTitle'>Sponsors</div><div class='tickerdata'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png' style='height:25px;vertical-align:center;'/></div>"
       break;
     case 3: // Announcements
       marqueeDiv.innerHTML = announcements[announcementsCur-1];
@@ -114,3 +114,4 @@ startMarquee();
   <div id="marqueeContent">
   </div>
 </div>
+

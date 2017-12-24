@@ -10,6 +10,7 @@
   #CTG_Ticker {
     shape-outside: none;
     clip-path: polygon(0px 0px, 123px 0px, 126px 7px, 100% 7px, 100% 50px, 0px 50px);
+    -webkit-clip-path: polygon(0px 0px, 123px 0px, 126px 7px, 100% 7px, 100% 50px, 0px 50px);
   }
   #marqueeBorder {
       color: #ffffff;

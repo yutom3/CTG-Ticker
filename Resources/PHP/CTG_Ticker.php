@@ -55,10 +55,9 @@ function nextItem() { // Selects current item to display
       marqueeDiv.innerHTML = "Thanks for watching Change Thru Games: Level 4!";
       break;
   }
-    if (scheduleSubCur < scheduleSubMax) { //Is the schedule through?
-        ++scheduleSubCur;
-    }
-  else if (scheduleCur < scheduleMax) { // Will not increment until all announcements were displayed
+  if (scheduleSubCur < scheduleSubMax) { //Is the schedule through?
+    ++scheduleSubCur;
+  } else if (scheduleCur < scheduleMax) { // Will not increment until all announcements were displayed
     ++scheduleCur;
   } else if (announcementsCur <= announcementsMax) {
     ++announcementsCur;
@@ -100,12 +99,11 @@ function scrollMarquee() {
   // Check position of the div, then shift it left by the set amount of pixels.
   if ((parseInt(marqueeDiv.style.top) > 0) && (holdCur == 0)) {
     marqueeDiv.style.top=parseInt(marqueeDiv.style.top)-pxpTick/2+"px";
-  }
-  else if (holdCur < holdMax)
+  } else if (holdCur < holdMax) {
   holdCur += 1;
-  else if ((parseInt(marqueeDiv.style.top)>parseInt(contentHeight*-1)))
+  } else if ((parseInt(marqueeDiv.style.top)>parseInt(contentHeight*-1))) {
   marqueeDiv.style.top=parseInt(marqueeDiv.style.top)-pxpTick/2+"px";
-  else {
+  } else {
     nextItem();
   }
 }
@@ -116,4 +114,3 @@ startMarquee();
   <div id="marqueeContent">
   </div>
 </div>
-

@@ -1,1 +1,1 @@
-<div class='tickerTitle'>Latest News </div><div class='tickerData'>Join our Minecraft server! IP: 192.168.1.1</div>*<div class='tickerTitle'>Latest News </div><div class='tickerData'>$100 milestone reached!</div>
+<div class='tickerTitle'>News </div><div class='tickerData'>Join our Minecraft server! IP: 192.168.1.1</div>*<div class='tickerTitle'>News </div><div class='tickerData'>$100 milestone reached!</div>

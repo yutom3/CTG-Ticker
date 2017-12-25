@@ -13,36 +13,38 @@
   }
   #CTG_Ticker {
     shape-outside: none;
-    clip-path: polygon(0px 0px, 123px 0px, 126px 7px, 100% 7px, 100% 50px, 0px 50px);
-    -webkit-clip-path: polygon(0px 0px, 123px 0px, 126px 7px, 100% 7px, 100% 50px, 0px 50px);
+    -webkit-clip-path: polygon(0px 0px, 170px 0px, 173px 8px, 100% 8px, 100% 60px, 0px 60px);
   }
   #marqueeBorder {
       color: #ffffff;
       background-color: none;
       background-image: url("Resources/Images/Ticker.png"), url("Resources/Images/TickerBlack.png");
-      background-size: contain, contain;
+      background-size: 960px 100%, contain;
       background-repeat: no-repeat, repeat-x;
       font-family: TheLightFont, Arial, "Helvetica Neue", Helvetica, sans-serif;
       position: relative;
-      height: 50px;
-      overflow:hidden;
-      font-size: 1.5em;
+      height: 60px;
+      overflow: hidden;
+      font-size: 2em;
   }
   #marqueeContent {
     position: absolute;
     left: -12px !important;
-    line-height: 55px;
+    line-height: 62px;
     width: 100%;
     white-space:nowrap;
+  }
+  .tickerTitle {
+    display:inline-block;
+    letter-spacing: 2px;
+    font-weight: 900;
+    text-align: center;
+    width: 190px !important;
   }
   .tickerData {
     display: inline;
     padding-left: 1em !important;
-  }
-  .tickerTitle {
-    display:inline-block;
-    text-align: center;
-    width: 150px !important;
+    vertical-align: top;
   }
   .schedule, .announcements {
     margin: 40px;
@@ -203,4 +205,3 @@
     }
   </script>
 </body>
-

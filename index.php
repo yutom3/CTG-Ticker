@@ -13,7 +13,7 @@
   }
   #CTG_Ticker {
     shape-outside: none;
-    /*-webkit-clip-path: polygon(0px 0px, 170px 0px, 173px 8px, 100% 8px, 100% 120px, 0px 120px);*/
+    -webkit-clip-path: polygon(0px 0px, 318px 0px, 325px 17px, 100% 17px, 100% 120px, 0px 120px);
   }
   #marqueeBorder {
       color: #ffffff;

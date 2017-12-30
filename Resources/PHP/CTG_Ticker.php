@@ -1,10 +1,10 @@
 <script type="text/javascript">
 
 // Set initial vars
-var holdMax = 100;
+var holdMax = 500;
 var holdCur = 0;
 var interval = 20;
-var scrollSpeed = 2;
+var scrollSpeed = 20;
 var pxpTick = scrollSpeed;
 
 var schedule = "";
@@ -114,4 +114,3 @@ startMarquee();
   <div id="marqueeContent">
   </div>
 </div>
-

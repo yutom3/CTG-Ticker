@@ -1,10 +1,10 @@
 <script type="text/javascript">
 
 // Set initial vars
-var holdMax = 500;
+var holdMax = 300;
 var holdCur = 0;
 var interval = 20;
-var scrollSpeed = 20;
+var scrollSpeed = 5;
 var pxpTick = scrollSpeed;
 
 var schedule = "";
@@ -45,7 +45,7 @@ function nextItem() { // Selects current item to display
           marqueeDiv.innerHTML = schedule[scheduleSubCur];
       break;
     case 2: // Sponsors
-          marqueeDiv.innerHTML = "<div class='tickerTitle'>Sponsors</div><div class='tickerdata'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png' style='height:25px;vertical-align:center;'/></div>"
+          marqueeDiv.innerHTML = "<div class='tickerTitle'>Sponsors</div><div class='tickerdata'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png' style='height:75px;vertical-align:center;'/></div>"
       break;
     case 3: // Announcements
       marqueeDiv.innerHTML = announcements[announcementsCur-1];

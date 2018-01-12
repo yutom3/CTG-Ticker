@@ -80,7 +80,8 @@
 
   <!-- Ticker Overlay -->
   <br>
-  <div id="CTG_Ticker"></div>
+  <div id="CTG_Ticker">
+  </div>
 
   <div class="row">
     <div class="form col-sm-6">
@@ -158,8 +159,8 @@
         </form>
       </div>
     </div>
-    <!-- Current Schedule -->
-    <div class="form col-sm-6" id="CTG_CurrentSchedule"></div>
+    <div class="form col-sm-6" id="CTG_CurrentSchedule">
+    </div>
   </div>
 
   <div class="row">
@@ -181,9 +182,10 @@
         </form>
       </div>
     </div>
-    <!-- Current Announcements -->
-    <div class="form col-sm-6" id="CTG_CurrentAnnouncements"></div>
+    <div class="form col-sm-6" id="CTG_CurrentAnnouncements">
+    </div>
   </div>
+
 
   <script type="text/javascript"> // Start ticker upon page load
     var loadHelper;

@@ -13,24 +13,24 @@
   }
   #CTG_Ticker {
     shape-outside: none;
-    -webkit-clip-path: polygon(0px 0px, 170px 0px, 173px 8px, 100% 8px, 100% 60px, 0px 60px);
+    -webkit-clip-path: polygon(0px 0px, 318px 0px, 325px 17px, 100% 17px, 100% 120px, 0px 120px);
   }
   #marqueeBorder {
       color: #ffffff;
       background-color: none;
       background-image: url("Resources/Images/Ticker.png"), url("Resources/Images/TickerBlack.png");
-      background-size: 960px 100%, contain;
+      background-size: 1800px 100%, contain;
       background-repeat: no-repeat, repeat-x;
       font-family: TheLightFont, Arial, "Helvetica Neue", Helvetica, sans-serif;
       position: relative;
-      height: 60px;
+      height: 120px;
       overflow: hidden;
-      font-size: 2em;
+      font-size: 4em;
   }
   #marqueeContent {
     position: absolute;
     left: -12px !important;
-    line-height: 62px;
+    line-height: 120px;
     width: 100%;
     white-space:nowrap;
   }
@@ -39,7 +39,7 @@
     letter-spacing: 2px;
     font-weight: 900;
     text-align: center;
-    width: 190px !important;
+    width: 360px !important;
   }
   .tickerData {
     display: inline;

@@ -15,26 +15,20 @@ header("Pragma: no-cache");
   <script src="Resources/JS/odometer.js"></script> <!-- Odometer JS (Copyright (c) 2013 HubSpot, Inc.)-->
   <link rel="stylesheet" href="Resources/CSS/odometer-theme-default.css"> <!-- Odometer Default Theme CSS -->
   <style>
-  #wrapper
-  {
-    width: 995px;
-    padding: 0px;
-    margin: 0px auto;
-    font-family: helvetica;
-    text-align: center;
-  }
-  td {
-  	width: 50px;
-  	text-align: center;
-  }
-  input[type="button"] {
-  	margin-top: 5px;
-  }
-  .save {
-  	display: none;
+  body {
+    background-color: black;
+    color: white;
   }
   .odometer .odometer-inside:before {
     content: "$";
+  }
+  .odometer {
+    width: 100%;
+    font-size: 3em;
+    text-align: center;
+  }
+  .odometer-digit {
+    top: -0.25em;
   }
   </style>
 </head>

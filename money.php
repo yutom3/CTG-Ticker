@@ -12,7 +12,7 @@ header("Pragma: no-cache");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-  <script src="Resources/JS/odometer.js"></script> <!-- Odometer JS (Copyright (c) 2013 HubSpot, Inc.)-->
+  <script src="Resources/JS/odometer.js"></script> <!-- Odometer JS (Copyright (c) 2013 HubSpot, Inc.) -->
   <link rel="stylesheet" href="Resources/CSS/odometer-theme-default.css"> <!-- Odometer Default Theme CSS -->
   <style>
   body {
@@ -49,7 +49,7 @@ header("Pragma: no-cache");
       loadMoneyDelay();
     }
     function loadMoneyDelay() {
-      loadHelper = setTimeout(loadMoney, 30000);
+      loadHelper = setTimeout(loadMoney, 1000);
     }
   </script>
 </body>

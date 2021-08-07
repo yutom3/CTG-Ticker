@@ -64,6 +64,7 @@ function nextItem() { // Selects current item to display
     //done = 1;
     clearInterval(myInterval); // Stops previous instance
     loadTicker(); // Refresh data
+    loadCurrentDelay();
     scheduleCur = 1;
     announcementsCur = 1;
     scheduleSubCur = 0;
